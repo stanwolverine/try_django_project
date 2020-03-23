@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Post Your Own Articles</h2>
+<form method="post">
+	{% csrf_token %}
+	<legend>Create Your Article</legend>
+	{{ form.as_p }}
+	<input type="submit" value="post" />
+</form>
+{% endblock %}

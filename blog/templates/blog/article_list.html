@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+	<a href="{% url 'article-create' %}">Create new article here</a>
+	{% for article in articles %}
+	<h3>{{ article.title }}</h3>
+	{% if article.active == False %}
+	<p style="background-color: grey; padding: 5;">Not active</p>
+	{% else %}
+	<a href="{% url 'article-details' article.id %}">Read</a>
+	{% endif %} {% endfor %}
+</div>
+{% endblock %}
